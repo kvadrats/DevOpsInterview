@@ -1,6 +1,6 @@
 # Stage 1: Build the virtual environment with dependencies using uv
 # Using a specific Python version on Debian "bookworm" for reproducibility.
-FROM python:3.11-slim-bookworm AS builder
+FROM python:3.11-slim-bookworm
 
 # Install uv.
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/

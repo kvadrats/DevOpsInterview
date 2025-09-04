@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minimal-joke-api
+  namespace: joke-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minimal-joke-api
+  template:
+    metadata:
+      labels:
+        app: minimal-joke-api
+    spec:
+      containers:
+        - name: app
+          image: ${IMAGE}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          env:
+            - name: EXTERNAL_JOKE_BASE_URL
+              value: "https://official-joke-api.appspot.com"
+            - name: REQUEST_TIMEOUT_S
+              value: "3.0"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: "1"
+              memory: 512Mi

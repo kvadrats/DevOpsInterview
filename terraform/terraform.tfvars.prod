@@ -1,0 +1,5 @@
+project_id   = "your-gcp-project-id"
+region       = "europe-north1"
+cluster_name = "joke-autopilot"
+repo_name    = "apps"
+github_repo  = "your-org/your-repo"
