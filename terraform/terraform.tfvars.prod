@@ -1,5 +1,5 @@
-project_id   = "your-gcp-project-id"
+project_id   = "decoded-nebula-234516"
 region       = "europe-north1"
 cluster_name = "joke-autopilot"
-repo_name    = "apps"
-github_repo  = "your-org/your-repo"
+repo_name    = "DevOpsInterview"
+github_repo  = "kvadrats/DevOpsInterview"
