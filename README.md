@@ -40,7 +40,7 @@ curl -s -X POST -d 'username=admin&password=admin' http://localhost:8000/auth/to
 
 ```Bash
 cd terraform
-cp terraform.tfvars.example terraform.tfvars
+cp terraform.tfvars.dev terraform.tfvars
 # edit values (project_id, github_repo, etc.)
 terraform init
 terraform apply

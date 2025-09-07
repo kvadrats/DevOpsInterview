@@ -38,7 +38,7 @@ jobs:
         run: |
           gcloud auth configure-docker ${REGION}-docker.pkg.dev --quiet
 
-      - name: Build and Push :latest
+      - name: Build and Push
         run: |
           AR="${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}"
           IMAGE_LATEST="${AR}/${IMAGE_NAME}:latest"
@@ -57,9 +57,3 @@ jobs:
           kubectl apply -f k8s/namespace.yaml
           kubectl apply -f k8s/service.yaml
           kubectl apply -f k8s/ingress.yaml
-
-      - name: Render & Apply Deployment (uses :latest)
-        run: |
-          sudo apt-get update && sudo apt-get install -y gettext-base
-          envsubst < k8s/deployment.yaml > k8s/deployment.rendered.yaml
-          kubectl apply -f k8s/deployment.rendered.yaml
